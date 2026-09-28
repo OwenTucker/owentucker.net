@@ -1,0 +1,27 @@
+# One entry per paper. Newest first is automatic (sorted by year).
+#   pdf:  path to a file in assets/papers/ (e.g. /assets/papers/foo.pdf) or a full URL
+#   doi:  just the DOI, the link is built for you
+#   note: optional short line, e.g. an award
+#   code: optional repo link
+
+- title: "Inferring Locations and Correcting Bias in Infectious Disease Data Using Human Mobility"
+  authors: "Owen Tucker, Lily Wang, Ruochen Kong, Haley Stone, Matthew Scotch, Jing Du, Flora Salim, Taylor Anderson, Chandini Raina MacIntyre, Andreas Züfle"
+  venue: "ACM SIGSPATIAL (Applications Track)"
+  year: 2026
+  # pdf: /assets/papers/tucker-sigspatial-2026.pdf
+
+- title: "Spatial Inference on Phylogenetic Trees"
+  authors: "Owen Tucker, Andreas Züfle"
+  venue: "ACM SIGSPATIAL Student Research Competition"
+  year: 2025
+  note: "3rd place"
+  doi: "10.1145/3748636.3766533"
+  code: "https://github.com/OwenTucker/ViterbiACMSigSpatial"
+  # pdf: /assets/papers/tucker-sigspatial-src-2025.pdf
+
+- title: "Novel multimodal mechanical stimulation is superior to TENS to treat and prevent chronic low back pain: a randomized controlled trial"
+  authors: "Amy Lynn Baxter, Jena L. Etnoyer-Slaski, Owen Tucker, Jessica Allia Rice Williams, Kevin Swartout, Lindsey L. Cohen, M. Louise Lawson"
+  venue: "Frontiers in Pain Research"
+  year: 2025
+  doi: "10.3389/fpain.2025.1625420"
+  # pdf: /assets/papers/baxter-frontiers-pain-2025.pdf

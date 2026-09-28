@@ -1,0 +1,8 @@
+---
+layout: default
+---
+<article class="page">
+  <h1>{{ page.title }}{% if page.badge %} <span class="badge">({{ page.badge }})</span>{% endif %}</h1>
+  {% if page.lede %}<p class="lede">{{ page.lede }}</p>{% endif %}
+  {{ content }}
+</article>

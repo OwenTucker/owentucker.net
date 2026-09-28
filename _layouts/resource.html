@@ -1,0 +1,60 @@
+---
+layout: default
+---
+{% assign r = page %}
+<article class="page resource">
+  <p class="meta"><a href="{{ '/t1d/' | relative_url }}">T1D Resources</a></p>
+  <h1>{{ r.title }}{% if r.short_name %} <span class="abbr">({{ r.short_name }})</span>{% endif %}</h1>
+  {% if r.summary %}<p class="lede">{{ r.summary }}</p>{% endif %}
+
+  <nav class="jump">
+    <a href="#overview">Overview</a>
+    {% if r.repos.size > 0 %}<a href="#code">Code</a>{% endif %}
+    <a href="#datasets">Datasets</a>
+    {% if r.works.size > 0 %}<a href="#works">Related work</a>{% endif %}
+  </nav>
+
+  <section id="overview">
+    <h2>Overview</h2>
+    {{ content }}
+  </section>
+
+  {% if r.repos.size > 0 %}
+  <section id="code">
+    <h2>Code &amp; getting started</h2>
+    <ul class="link-list">
+      {% for x in r.repos %}
+      <li>
+        <a href="{{ x.url }}">{{ x.name }}</a>{% if x.language %} <span class="tag">{{ x.language }}</span>{% endif %}
+        {% if x.description %}<p>{{ x.description }}</p>{% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+
+  <section id="datasets">
+    <h2>Datasets</h2>
+    <p>
+      For public continuous glucose monitoring (CGM) data, start with
+      <a href="{{ site.datasets.url }}">{{ site.datasets.name }}</a>, which collects
+      public CGM datasets for research.
+    </p>
+  </section>
+
+  {% if r.works.size > 0 %}
+  <section id="works">
+    <h2>Related work</h2>
+    <ol class="work-list">
+      {% assign works = r.works | sort: "year" | reverse %}
+      {% for w in works %}
+      <li>
+        {% if w.url %}<a href="{{ w.url }}">{{ w.title }}</a>{% else %}{{ w.title }}{% endif %}
+        <span class="cite">{{ w.authors }}{% if w.venue %}. <em>{{ w.venue }}</em>{% endif %}{% if w.year %}, {{ w.year }}{% endif %}.</span>
+        {% if w.note %}<p>{{ w.note }}</p>{% endif %}
+      </li>
+      {% endfor %}
+    </ol>
+  </section>
+  {% endif %}
+</article>

@@ -1,0 +1,28 @@
+---
+layout: page
+title: T1D Resources
+badge: In Progress
+lede: >-
+  Background, datasets, and starter code for machine learning research in type 1
+  diabetes. Each project below has its own page.
+---
+{% assign resources = site.resources | sort: "order" %}
+<ul class="resource-cards">
+  {% for r in resources %}
+  <li>
+    <a class="card" href="{{ r.url | relative_url }}">
+      <h2>{{ r.title }}{% if r.short_name %} <span class="abbr">({{ r.short_name }})</span>{% endif %}</h2>
+      <p>{{ r.summary }}</p>
+      <p class="counts">
+        {{ r.repos.size | default: 0 }} repos &middot;
+        {{ r.works.size | default: 0 }} related papers
+      </p>
+    </a>
+  </li>
+  {% endfor %}
+</ul>
+
+<p class="muted">
+  Looking for data? <a href="{{ site.datasets.url }}">{{ site.datasets.name }}</a>
+  collects public CGM datasets for research.
+</p>

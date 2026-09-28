@@ -1,0 +1,19 @@
+---
+layout: page
+title: Publications
+---
+{% assign pubs = site.data.publications | sort: "year" | reverse %}
+<ol class="pub-list">
+  {% for p in pubs %}
+  <li>
+    <span class="pub-title">{{ p.title }}</span>
+    <span class="pub-authors">{{ p.authors | replace: site.author.name, "<strong>Owen Tucker</strong>" }}</span>
+    <span class="pub-venue"><em>{{ p.venue }}</em>, {{ p.year }}{% if p.note %} &middot; {{ p.note }}{% endif %}</span>
+    <span class="pub-links">
+      {% if p.pdf %}<a href="{% if p.pdf contains '://' %}{{ p.pdf }}{% else %}{{ p.pdf | relative_url }}{% endif %}">PDF</a>{% endif %}
+      {% if p.doi %}<a href="https://doi.org/{{ p.doi }}">DOI</a>{% endif %}
+      {% if p.code %}<a href="{{ p.code }}">Code</a>{% endif %}
+    </span>
+  </li>
+  {% endfor %}
+</ol>

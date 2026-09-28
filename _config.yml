@@ -1,0 +1,58 @@
+title: Owen Tucker
+description: >-
+  MS student at Emory. Research and open resources for machine learning
+  in type 1 diabetes.
+url: "https://owentucker.net"
+baseurl: ""
+
+author:
+  name: Owen Tucker
+  email: owen.tucker@emory.edu
+  affiliation: MS @ Emory
+  github: OwenTucker
+  linkedin: owen-tucker7
+
+# Every T1D page points here for data instead of keeping its own dataset list.
+datasets:
+  name: Glucose-ML
+  url: https://www.glucose-ml-project.com/
+
+# Header navigation, left to right. Publications is pinned to the far right.
+nav:
+  - title: T1D Resources
+    badge: In Progress
+    url: /t1d/
+  - title: Blog
+    url: /blog/
+nav_right:
+  - title: Publications
+    url: /publications/
+
+# Each file in _resources/ becomes a page under /t1d/<name>/
+collections:
+  resources:
+    output: true
+    permalink: /t1d/:name/
+
+defaults:
+  - scope: { path: "", type: posts }
+    values: { layout: post }
+  - scope: { path: "", type: resources }
+    values: { layout: resource }
+  - scope: { path: "" }
+    values: { layout: default }
+
+permalink: /blog/:year/:month/:title/
+markdown: kramdown
+kramdown:
+  math_engine: mathjax
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
